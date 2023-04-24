@@ -7,7 +7,9 @@ namespace R5T.T0179.Construction
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            //Experiments.Instance.EqualityOperator_SameInstance();
+            //Experiments.Instance.EqualityOperator_OnInstanceAsInterface();
+            Experiments.Instance.EqualsMethod_OnInstanceAsInterface();
         }
     }
 }
