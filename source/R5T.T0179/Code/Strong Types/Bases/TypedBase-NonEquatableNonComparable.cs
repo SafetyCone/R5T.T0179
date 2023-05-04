@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 namespace R5T.T0179.N001
 {
     /// <summary>
-    /// A base implementation for strong-type implementations with underlying types that are not <see cref="IEquatable{T}"/> not <see cref="IComparable{T}"/>.
+    /// A base implementation for strong-type implementations with underlying types that are not <see cref="IEquatable{T}"/> and not <see cref="IComparable{T}"/>.
     /// Instead, implementations must supply methods that perform these operations on their values.
     /// </summary>
     /// <typeparam name="T">The underlying type of the strong-type.</typeparam>
