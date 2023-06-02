@@ -20,6 +20,15 @@ namespace R5T.T0179
             return output;
         }
 
+        public IEnumerable<T> Get_Values<T>(IEnumerable<ITyped<T>> typeds)
+        {
+            var output = typeds
+                .Select(x => x.Value)
+                ;
+
+            return output;
+        }
+
         public IEnumerable<string> ToStrings<T>(IEnumerable<ITyped<T>> typeds)
         {
             var output = typeds
