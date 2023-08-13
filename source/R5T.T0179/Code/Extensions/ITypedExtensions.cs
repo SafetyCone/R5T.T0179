@@ -17,6 +17,13 @@ namespace R5T.T0179.Extensions
             return output;
         }
 
+        public static bool Equals_ByValue<T>(this ITyped<T> a,
+            ITyped<T> b)
+        {
+            var output = Instances.TypedOperator.Equals_ByValue(a, b);
+            return output;
+        }
+
         public static IEnumerable<T> Get_Values<T>(this IEnumerable<ITyped<T>> typeds)
         {
             return Instances.TypedOperator.Get_Values(typeds);

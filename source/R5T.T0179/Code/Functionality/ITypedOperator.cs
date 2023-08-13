@@ -20,6 +20,14 @@ namespace R5T.T0179
             return output;
         }
 
+        public bool Equals_ByValue<T>(
+            ITyped<T> a,
+            ITyped<T> b)
+        {
+            var output = a.Value.Equals(b.Value);
+            return output;
+        }
+
         public IEnumerable<T> Get_Values<T>(IEnumerable<ITyped<T>> typeds)
         {
             var output = typeds
