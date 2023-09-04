@@ -12,11 +12,32 @@ namespace R5T.T0179
     {
         public TOutput As<T, TInput, TOutput>(
             TInput input,
-            Func<T, TOutput> outputConstrctor)
+            Func<T, TOutput> outputConstructor)
             where TInput : ITyped<T>
             where TOutput : ITyped<T>
         {
-            var output = outputConstrctor(input.Value);
+            var output = outputConstructor(input.Value);
+            return output;
+        }
+
+        public TOutput To<TInput, TOutput>(
+            TInput input,
+            Func<TInput, TOutput> outputConstructor)
+            where TOutput : ITyped<TInput>
+        {
+            var output = outputConstructor(input);
+            return output;
+        }
+
+        public IEnumerable<TOutput> To<TInput, TOutput>(
+            IEnumerable<TInput> inputs,
+            Func<TInput, TOutput> outputConstructor)
+            where TOutput : ITyped<TInput>
+        {
+            var output = inputs
+                .Select(input => this.To(input, outputConstructor))
+                ;
+
             return output;
         }
 

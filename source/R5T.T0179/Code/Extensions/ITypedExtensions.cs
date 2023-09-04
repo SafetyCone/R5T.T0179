@@ -44,5 +44,14 @@ namespace R5T.T0179.Extensions
 
             return output;
         }
+
+        public static IEnumerable<TTyped> To<T, TTyped>(this IEnumerable<T> values,
+            Func<T, TTyped> typedConstructor)
+            where TTyped : ITyped<T>
+        {
+            return Instances.TypedOperator.To(
+                values,
+                typedConstructor);
+        }
     }
 }
