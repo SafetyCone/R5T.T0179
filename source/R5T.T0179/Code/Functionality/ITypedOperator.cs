@@ -49,11 +49,34 @@ namespace R5T.T0179
             return output;
         }
 
-        public IEnumerable<T> Get_Values<T>(IEnumerable<ITyped<T>> typeds)
+        public Func<TInput, TOutput> Get_Converter<T, TInput, TOutput>(
+            Func<T, TOutput> outputConstructor)
+            where TInput : ITyped<T>
+            where TOutput : ITyped<T>
+        {
+            TOutput Internal(TInput input)
+            {
+                var output = outputConstructor(input.Value);
+                return output;
+            }
+
+            return Internal;
+        }
+
+
+        public IEnumerable<T> Enumerate_Values<T>(IEnumerable<ITyped<T>> typeds)
         {
             var output = typeds
                 .Select(x => x.Value)
                 ;
+
+            return output;
+        }
+
+        public T[] Get_Values<T>(IEnumerable<ITyped<T>> typeds)
+        {
+            var output = this.Enumerate_Values(typeds)
+                .ToArray();
 
             return output;
         }

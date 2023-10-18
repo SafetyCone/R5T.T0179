@@ -24,7 +24,12 @@ namespace R5T.T0179.Extensions
             return output;
         }
 
-        public static IEnumerable<T> Get_Values<T>(this IEnumerable<ITyped<T>> typeds)
+        public static IEnumerable<T> Enumerate_Values<T>(this IEnumerable<ITyped<T>> typeds)
+        {
+            return Instances.TypedOperator.Enumerate_Values(typeds);
+        }
+
+        public static T[] Get_Values<T>(this IEnumerable<ITyped<T>> typeds)
         {
             return Instances.TypedOperator.Get_Values(typeds);
         }
