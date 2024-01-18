@@ -1,5 +1,6 @@
 ﻿using System;
 
+using R5T.T0142;
 using R5T.T0178;
 
 
@@ -10,7 +11,7 @@ namespace R5T.T0179
     /// Strong-types wrap an underlying type.
     /// </summary>
     /// <typeparam name="T">The underlying type.</typeparam>
-    [StrongTypeMarker]
+    [UtilityTypeMarker, TypeMarker, StrongTypeMarker]
     public interface ITyped<T> : IStrongTypeMarker
     {
         //#region Static

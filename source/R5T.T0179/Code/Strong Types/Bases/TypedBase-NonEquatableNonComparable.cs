@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Reflection.Emit;
+
+using R5T.T0142;
+
 
 namespace R5T.T0179.N001
 {
@@ -8,6 +10,7 @@ namespace R5T.T0179.N001
     /// Instead, implementations must supply methods that perform these operations on their values.
     /// </summary>
     /// <typeparam name="T">The underlying type of the strong-type.</typeparam>
+    [UtilityTypeMarker, TypeMarker]
     public abstract class TypedBase<T> : ITyped<T>, IEquatable<ITyped<T>>, IComparable<ITyped<T>>
     {
         #region Static

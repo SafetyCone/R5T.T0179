@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0142;
+
 
 namespace R5T.T0179
 {
@@ -12,6 +14,7 @@ namespace R5T.T0179
     /// is also supplied.
     /// </summary>
     /// <typeparam name="T">The underlying type of the strong-type.</typeparam>
+    [UtilityTypeMarker, TypeMarker]
     public abstract class TypedBase<T> : ITyped<T>, IEquatable<ITyped<T>>, IComparable<ITyped<T>>
         where T : IEquatable<T>, IComparable<T>
     {
